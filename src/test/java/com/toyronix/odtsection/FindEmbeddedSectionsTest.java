@@ -19,13 +19,12 @@ public class FindEmbeddedSectionsTest {
     }
 
     @Test
-    public void testDocumentHaEmbeddedSections() throws Exception {
+    public void testDocumentHasEmbeddedSections() throws Exception {
         TextDocument textDocument = TextDocument.loadDocument(DOC_WITH_TWO_EMBEDDED_SECTION);
         TextDocumentHandler textDocumentHandler = new TextDocumentHandler(textDocument);
 
         assertThat(textDocumentHandler.hasEmbeddedSections()).isTrue();
     }
-
 
     @Test
     public void testDocumentHasOneSection() throws Exception {
