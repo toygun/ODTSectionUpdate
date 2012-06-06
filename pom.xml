@@ -7,7 +7,7 @@
   <version>SNAPSHOT-1.0</version>
   <packaging>jar</packaging>
 
-  <name>ODTSectionUpdate</name>
+  <name>com.toyronix.ODTSectionUpdate</name>
   <url>http://maven.apache.org</url>
 
   <properties>

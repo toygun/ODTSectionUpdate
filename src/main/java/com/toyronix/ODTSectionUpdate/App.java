@@ -1,4 +1,4 @@
-package ODTSectionUpdate;
+package com.toyronix.ODTSectionUpdate;
 
 /**
  * Hello world!
