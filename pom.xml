@@ -1,25 +1,90 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ODTSectionUpdate</groupId>
-  <artifactId>ODTSectionUpdate</artifactId>
-  <version>SNAPSHOT-1.0</version>
-  <packaging>jar</packaging>
+    <groupId>ODTSectionUpdate</groupId>
+    <artifactId>ODTSectionUpdate</artifactId>
+    <version>SNAPSHOT-1.0</version>
+    <packaging>jar</packaging>
 
-  <name>com.toyronix.ODTSectionUpdate</name>
-  <url>http://maven.apache.org</url>
+    <name>com.toyronix.ODTSectionUpdate</name>
+    <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <testResourceBaseDirectory>${project.basedir}/src/test/resources/odt</testResourceBaseDirectory>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.odftoolkit</groupId>
+            <artifactId>simple-odf</artifactId>
+            <version>0.6.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.odftoolkit</groupId>
+            <artifactId>odfdom-java</artifactId>
+            <version>0.8.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-assert</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>5.14.6</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <!--<build>-->
+    <!--<testResources>-->
+    <!--<testResource>-->
+    <!--<directory>${project.basedir}/src/test/resources/testng</directory>-->
+    <!--<filtering>true</filtering>-->
+    <!--<targetPath>${project.basedir}</targetPath>-->
+    <!--</testResource>-->
+    <!--<testResource>-->
+    <!--<directory>${project.basedir}/src/test/resources/odt</directory>-->
+    <!--<filtering>false</filtering>-->
+    <!--<targetPath>${project.build.testOutputDirectory}</targetPath>-->
+    <!--</testResource>-->
+    <!--</testResources>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<artifactId>maven-surefire-plugin</artifactId>-->
+    <!--<version>2.12</version>-->
+    <!--<configuration>-->
+    <!--<failIfNoTests>true</failIfNoTests>-->
+    <!--<systemPropertyVariables>-->
+    <!--<resourceBaseDirectory>${testResourceBaseDirectory}</resourceBaseDirectory>-->
+    <!--</systemPropertyVariables>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
+
 </project>
