@@ -27,6 +27,15 @@ public class FindEmbeddedSectionsTest {
     }
 
     @Test
+    public void testDocumentHasZeroEmbeddedSection() throws Exception {
+        TextDocument textDocument = TextDocument.loadDocument(DOC_WITH_NO_EMBEDDED_SECTION);
+        TextDocumentHandler textDocumentHandler = new TextDocumentHandler(textDocument);
+
+        assertThat(textDocumentHandler.embeddedSectionList()).isNull();
+    }
+
+
+    @Test
     public void testDocumentHasOneSection() throws Exception {
         TextDocument textDocument = TextDocument.loadDocument(DOC_WITH_ONE_EMBEDDED_SECTION);
         TextDocumentHandler textDocumentHandler = new TextDocumentHandler(textDocument);
