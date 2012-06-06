@@ -2,10 +2,12 @@ package com.toyronix.odtsection;
 
 import org.odftoolkit.simple.TextDocument;
 import org.testng.annotations.Test;
+import org.w3c.dom.Element;
 
 import static org.fest.assertions.Assertions.assertThat;
 
 public class FindEmbeddedSectionsTest {
+    public static final String EXPECTED_EMBEDDED_SECTION_PATH = "../docWithNoEmbeddedSection.odt";
     private String DOC_WITH_NO_EMBEDDED_SECTION = "src/test/resources/odt/section/docWithNoEmbeddedSection.odt";
     private String DOC_WITH_ONE_EMBEDDED_SECTION = "src/test/resources/odt/section/enclosingDocWithOneEmbeddedSection.odt";
     private String DOC_WITH_TWO_EMBEDDED_SECTION = "src/test/resources/odt/section/enclosingDocWithTwoEmbeddedSections.odt";
@@ -34,7 +36,6 @@ public class FindEmbeddedSectionsTest {
         assertThat(textDocumentHandler.embeddedSectionList()).isNull();
     }
 
-
     @Test
     public void testDocumentHasOneSection() throws Exception {
         TextDocument textDocument = TextDocument.loadDocument(DOC_WITH_ONE_EMBEDDED_SECTION);
@@ -49,6 +50,15 @@ public class FindEmbeddedSectionsTest {
         TextDocumentHandler textDocumentHandler = new TextDocumentHandler(textDocument);
 
         assertThat(textDocumentHandler.embeddedSectionList().getLength()).isEqualTo(2);
+
+    }
+
+    @Test
+    public void testExtractTheEmbeddedSectionPathCorrectly() throws Exception {
+        TextDocument textDocument = TextDocument.loadDocument(DOC_WITH_ONE_EMBEDDED_SECTION);
+        TextDocumentHandler textDocumentHandler = new TextDocumentHandler(textDocument);
+
+        assertThat(((Element) textDocumentHandler.embeddedSectionList().item(0)).getAttribute("xlink:href")).isEqualTo(EXPECTED_EMBEDDED_SECTION_PATH);
 
     }
 
