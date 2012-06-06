@@ -41,6 +41,7 @@ public class FindEmbeddedSectionsTest {
         TextDocumentHandler textDocumentHandler = new TextDocumentHandler(textDocument);
 
         assertThat(textDocumentHandler.embeddedSectionList().getLength()).isEqualTo(2);
+
     }
 
 
