@@ -1,2 +1,2 @@
-com.toyronix.ODTSectionUpdate
+com.toyronix.odtsection
 ================

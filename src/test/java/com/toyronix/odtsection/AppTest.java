@@ -1,4 +1,4 @@
-package com.toyronix.ODTSectionUpdate;
+package com.toyronix.odtsection;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
